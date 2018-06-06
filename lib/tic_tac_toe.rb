@@ -60,4 +60,16 @@ class TicTacToe
   end
   
   def won?
+    WIN_COMBINATIONS.each do |win_array| #iterate through win conditions
+      if position_taken?(win_array[0]) #check if first position of win condition is taken
+        token = @board[win_array[0]] #get the token from the first position to check
+        if win_array.all? do |position| #check if all positions in the win condition have the token
+            @board[position] == token
+          end
+          return win_array #return the win condition
+        end  
+      end
+    end
+    false
+  end
 end
