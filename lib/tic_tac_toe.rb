@@ -51,4 +51,7 @@ class TicTacToe
     end
   end
   
+  def turn_count(board)
+    board.select{|position| position == "X" || position == "O"}.length
+  end
 end
