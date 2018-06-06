@@ -43,11 +43,11 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      token = current_player()
+      token = current_player
       move(index, token)
-      display_board()
+      display_board
     else
-      turn()
+      turn
     end
   end
   
@@ -56,7 +56,7 @@ class TicTacToe
   end
   
   def current_player
-    turn_count().even? ? "X" : "O"
+    turn_count.even? ? "X" : "O"
   end
   
   def won?
@@ -73,20 +73,20 @@ class TicTacToe
     false
   end
   
-  def full?(board)
-    board.all?{|position| position == "X" || position == "O"}
+  def full?
+    @board.all?{|position| position == "X" || position == "O"}
   end
   
-  def draw?(board)
-    !won?(board) && full?(board)
+  def draw?
+    full? && !won?
   end
   
-  def over?(board)
-    won?(board) || draw?(board)
+  def over?
+    won? || draw?
   end
   
-  def winner(board)
-    winning_board = won?(board)
+  def winner
+    winning_board = won?
     if winning_board
       board[winning_board[0]]
     end
