@@ -12,6 +12,6 @@ class TicTacToe
     [0,3,6], #left col
     [1,4,7], #mid col
     [2,5,8]  #right col
-]
+  ]
 
 end
